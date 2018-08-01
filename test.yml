@@ -1,6 +1,6 @@
 ---
 
-- hosts: web
+- hosts: app
   user: ansible
   become: yes
   connection: ssh
