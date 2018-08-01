@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    stages {
+        stage('clone repository') {
+            steps {
+                git branch: 'master',
+                url: 'https://github.com/shreesri/shree_ansible.git'
+            }
+        }
+        stage('Deploy') {
+            steps {
+            ansiblePlaybook(credentialsId: 'shree', inventory: 'inventory', playbook: 'http_install.yml')
+        }
+    }
+	
+   }
+	
+}
