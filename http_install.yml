@@ -8,9 +8,6 @@
   vars_files:
     - copyrights.yml
     - web.yml
-  vars_prompt:
-    - name: Web_Domain
-      prompt: Web Domain
   tasks: 
     - name: Install Apache Web Server
       action: yum name=httpd state=installed
